@@ -1,0 +1,50 @@
+.Card {
+    position: relative;
+    height: 3.5in;
+    width: 2.5in;
+    padding: 0.1in;
+}
+.DifficultyGenerator {
+    position: absolute;
+    top: 0in;
+    left: 0in;
+}
+.LikelyOdds {
+    position: absolute
+}
+.Dice {
+    position: absolute
+}
+.NorseRunes {
+    position: absolute
+}
+.ElementalSymbols {
+    position: absolute
+}
+.RandomEventGenerator {
+    position: absolute
+}
+.SensorySnippets {
+    position: absolute
+}
+.TagSymbols {
+    position: absolute
+}
+.ScatterDie {
+    position: absolute
+}
+.Belongings {
+    position: absolute
+}
+.Names {
+    position: absolute
+}
+.Catalyst {
+    position: absolute;
+}
+.Location {
+    position: absolute;
+}
+.VirtueAndVice {
+    position: absolute;
+}

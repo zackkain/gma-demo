@@ -1,8 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== "production";
+
 module.exports = {
-  entry: './src/pages/index/page.js',
+  entry: './src/pages/index/index.js',
   output: {
     path: path.resolve(__dirname, 'docs'),
     filename: 'bundle.js',
@@ -20,6 +23,19 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+        ],
       }
     ]
   },
@@ -30,9 +46,10 @@ module.exports = {
       Data: path.resolve(__dirname, 'src/data/')
     },
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/pages/index/page.html'
-  })],
+  plugins:
+    [new HtmlWebpackPlugin({
+      template: './src/pages/index/index.html'
+    })].concat(devMode ? [] : [new MiniCssExtractPlugin()]),
   devServer: {
     static: {
       directory: path.join(__dirname, 'docs'),
